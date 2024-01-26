@@ -81,14 +81,10 @@ WSGI_APPLICATION = 'TextToSpeech.wsgi.application'
 
 
 DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
-        'OPTIONS': {
-            'timeout': 20,
-            'check_same_thread': False,
-            'isolation_level': 'read committed'
-        }
+        'NAME': os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
