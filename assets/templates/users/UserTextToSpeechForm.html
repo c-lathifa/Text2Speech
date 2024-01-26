@@ -1,0 +1,74 @@
+{%extends 'users/userbase.html'%}
+
+{%block contents%}
+
+<section>
+     <div class="container">
+        <div class="form">
+
+          <div id="errormessage"></div>
+            <center>
+                <h2>User Registration <span>Form</span></h2>
+         <form action="{%url 'GenerateSpeaksforUser'%}" class="form-ai form-ai-speed" id="tts-demo-form" method="POST">
+					<div class="row">
+{%csrf_token%}
+
+					</div>
+					<div class="form-group">
+                        <label>Enter Text Message Here To Speak</label>
+						<textarea class="form-control" id="tts-text" name="text" maxlength="500"></textarea>
+					</div>
+					<div class="form-group"><label>Select Voice</label>
+						<select class="form-control" id="voice_select" name="voice" required>
+                            <option value="">--Select--</option>
+                            <option value="banmai">Ban Mai (Northern Female)</option>
+                            <option value="leminh">Le Minh (Northern Male)</option>
+                            <option value="lannhi">Lan Nhi (Southern Female)</option>
+                            <option value="female">Thu Dung (Northern Female) </option>
+                            <option value="male">Cao Chung (Northern Male) </option>
+                            <option value="hatieumai">Ha Tieu Mai (Southern Female) </option>
+                            <option value="ngoclam">Ngoc Lam (Hue’s - Central Female) </option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label>Select Speed</label>
+						<select class="form-control" id="voice_speed_select" name="speed">
+							<option value="-3">Extremely slow speed</option>
+							<option value="-2">Very slow speed</option>
+							<option value="-1">Slow speed</option>
+							<option selected="selected" value="0">Normal speed</option>
+							<option value="1">Fast speed</option>
+							<option value="2">Very fast speed</option>
+							<option value="3">Extremely fast speed</option>
+						</select>
+					</div>
+
+					<div class="form-ai-btn">
+						<div class="row">
+							<div class="col-xl-6 order-xl-1">
+								<div class="form-group">
+                                    <button type="submit" class="btn-get-started scrollto" id="tts-speak">Generate audio</button>
+								</div>
+							</div>
+							<div class="col-xl-6 order-xl-2">
+								<div class="form-group" id="block-tts-audio">
+									<!--<audio controls="controls" id="tts-audio"
+										src="{{link}}"></audio>-->
+								</div>
+								<div class="lds-ellipsis">
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<p id="tts-flash-error" style="color: red"></p>
+				</form>
+                </center>
+        </div>
+
+      </div>
+    </section>
+{%endblock%}

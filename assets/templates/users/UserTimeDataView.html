@@ -1,0 +1,48 @@
+{%extends 'users/userbase.html'%}
+
+
+{%block contents%}
+ <section>
+     <div class="container">
+        <div class="form">
+
+          <div id="errormessage"></div>
+            <center>
+                <h2>View User Registration <span>Activate them</span></h2>
+
+               <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Voice Name</th>
+                        <th scope="col">Execution Time(S)</th>
+                        <th scope="col">Text Length</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.username}}</td>
+                        <td>{{i.voicename}}</td>
+                        <td>{{i.timesec}}</td>
+                        <td>{{i.textlen}}</td>
+
+
+                    </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+
+                </center>
+        </div>
+
+      </div>
+    </section>
+
+{%endblock%}

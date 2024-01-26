@@ -1,0 +1,55 @@
+{%extends 'users/userbase.html'%}
+
+
+{%block contents%}
+ <section>
+     <div class="container">
+        <div class="form">
+
+          <div id="errormessage"></div>
+            <center>
+                <h2>View User Registration <span>Activate them</span></h2>
+
+               <table border="2px" class="table table-hover table-dark">
+                    <thead>
+                    <tr class="table-danger">
+                        <th scope="col">S.No</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Text Data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        <th scope="col">Date</th>
+                        <!--<th scope="col">Link</th>-->
+                        <th scope="col">Link</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data %}
+                    <tr scope="row" style="color: BLUE; background-color:#FFFCBB">
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.loggeduser}}</td>
+                        <td>{{i.email}}</td>
+                        <td>{{i.textdata}}</td>
+                        <td>{{i.cdate}}</td>
+                        <!--<td>{{i.link}}</td>-->
+                        <td>
+                            <audio controls>
+                            <source src="{{i.link}}" type="audio/ogg">
+                            <source src="{{i.link}}" type="audio/mpeg">
+                            </audio>
+                        </td>
+
+                    </tr>
+                    {% endfor %}
+
+
+                    </tbody>
+                </table>
+
+                </center>
+        </div>
+
+      </div>
+    </section>
+
+{%endblock%}

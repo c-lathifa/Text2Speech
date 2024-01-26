@@ -1,0 +1,85 @@
+<html>
+<head>
+</head>
+<body>
+<form class="form-ai form-ai-speed" id="tts-demo-form" method="POST">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group fptai-tts__selection-voice">
+								<label class="form-group__label">Voice type</label>
+								<label class="radiobox">
+									<input type="radio" name="voice-type" class="radiobox__input" value="new" checked>
+									<span class="radiobox__radio">New speech</span>
+								</label>
+
+								<label class="radiobox">
+									<input type="radio" name="voice-type" class="radiobox__input" value="old">
+									<span class="radiobox__radio">Old speech</span>
+								</label>
+							</div>
+						</div>
+						<!-- <div class="col-lg-6">
+							<div class="form-group">
+								<label class="form-group__label">Gender</label>
+								<label class="radiobox">
+									<input type="radio" name="gender" class="radiobox__input" checked>
+									<span class="radiobox__radio">Commercial</span>
+								</label>
+
+								<label class="radiobox">
+									<input type="radio" name="gender" class="radiobox__input">
+									<span class="radiobox__radio">Free</span>
+								</label>
+							</div>
+						</div> -->
+					</div>
+					<div class="form-group">
+						<textarea class="form-control" id="tts-text" name="text" maxlength="500"></textarea>
+					</div>
+					<div class="form-group">
+						<select class="form-control" id="voice_select" name="voice">
+						</select>
+					</div>
+					<div class="form-group">
+						<select class="form-control" id="voice_speed_select" name="speed">
+							<option value="-3">Extremely slow speed</option>
+							<option value="-2">Very slow speed</option>
+							<option value="-1">Slow speed</option>
+							<option selected="selected" value="0">Normal speed</option>
+							<option value="1">Fast speed</option>
+							<option value="2">Very fast speed</option>
+							<option value="3">Extremely fast speed</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label class="checkbox">
+							<input type="checkbox" name="" class="checkbox__input">
+							<span class="checkbox__check">Add intonation to question</span>
+						</label>
+					</div>
+
+					<div class="form-ai-btn">
+						<div class="row">
+							<div class="col-xl-6 order-xl-1">
+								<div class="form-group">
+									<a href="#" class="btn" id="tts-speak">Generate audio</a>
+								</div>
+							</div>
+							<div class="col-xl-6 order-xl-2">
+								<div class="form-group" id="block-tts-audio">
+									<audio controls="controls" id="tts-audio"
+										src="https://s3-ap-southeast-1.amazonaws.com/openfpt-public/text2speech/female.0.5f00062c60e85cafcf5bd52e5d4040ff.mp3"></audio>
+								</div>
+								<div class="lds-ellipsis">
+									<div></div>
+									<div></div>
+									<div></div>
+									<div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<p id="tts-flash-error" style="color: red"></p>
+				</form>
+</body>
+</html>

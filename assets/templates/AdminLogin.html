@@ -1,0 +1,49 @@
+{%extends 'base.html'%}
+
+
+{%block contents%}
+<section id="intro">
+
+    <div class="intro-content">
+        <h2>Admin Login <span>Form</span></h2>
+        <div>
+            <form class="form-inline d-flex" method="post" action="{%url 'AdminLoginCheck'%}">
+                {%csrf_token%}
+                <table>
+                    <tr>
+                        <td><label for="name">Name (required)</label></td>
+                        <td><input type="text" id="name" name="loginid" class="text" required/></td>
+                        <br/>
+                    </tr>
+                    <div class="clr"><br/></div>
+                    <tr>
+                        <td><label for="password">Password (required)</label></td>
+                        <td><input type="password" id="name" name="pswd" class="text" required/></td>
+                    </tr>
+                    <div class="clr"></div>
+                    <br/>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="submit" class="btn-get-started scrollto">Login</button>
+                        </td>
+                    </tr>
+
+                    <div class="clr"></div>
+                </table>
+
+            </form>
+            <span>
+                {% if messages %}
+                        {% for message in messages %}
+                        <font color='RED'> {{ message }}</font>
+                        {% endfor %}
+                        {% endif %}
+            </span>
+            <!--<a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <a href="#portfolio" class="btn-projects scrollto">Our Projects</a>-->
+        </div>
+    </div>
+</section><!-- #intro -->
+
+{%endblock%}
